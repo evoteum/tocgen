@@ -9,9 +9,11 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "python/**"
+      - "**/*.md"
 
 permissions:
+  contents: write
+  id-token: write
 
 jobs:
   call-tocgen:
