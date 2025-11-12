@@ -157,7 +157,7 @@ def find_markdown_files_with_markers(start_marker, end_marker):
     start_pattern = re.escape(start_marker)
     end_pattern = re.escape(end_marker)
     result = []
-    for md_file in Path(".").rglob("*.md"):
+    for md_file in Path("..").rglob("*.md"):
         text = md_file.read_text(encoding="utf-8", errors="ignore")
         masked = remove_code_blocks(text)
         if re.search(start_pattern, masked) and re.search(end_pattern, masked):
