@@ -10,7 +10,7 @@ DEFAULT_END = "TOCGEN_TABLE_OF_CONTENTS_END"
 DEFAULT_INDENT = 4
 DEFAULT_MIN_LEVEL = 2
 DEFAULT_MAX_LEVEL = 6
-DEFAULT_LIST_STYLE = "ordered"
+DEFAULT_LIST_STYLE = "unordered"
 DEFAULT_CONFIG_PATHS = [".tocgen.yml", ".github/tocgen.yml"]
 
 HEADING_PATTERN = re.compile(r"^(#{1,6})\s+(.*)")
