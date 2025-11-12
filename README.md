@@ -48,6 +48,8 @@ Automatic Markdown Table of Contents generator with YAML configuration and CI su
 [//]: # (Table of contents will be automatically generated and inserted here.)
 
 [//]: # (TOCGEN_TABLE_OF_CONTENTS_END)
+[//]: # (Dogfooding!)
+
 
 [//]: # (## Security)
 [//]: # (OPTIONAL)
@@ -59,15 +61,30 @@ Automatic Markdown Table of Contents generator with YAML configuration and CI su
 [//]: # (OPTIONAL)
 [//]: # (Explain the motivation and abstract dependencies for this repo)
 
+Updating the Table of Contents manually is annoying, so tocgen does it for you. Available as,
+- GitHub Action
+- Container
+- raw Python3
+
+Depends on PyYAML so that it can read your config. Uses sensible defaults so you probably don't need a config.
+
 ## Install
 
 [//]: # (Explain how to install the thing.)
 [//]: # (OPTIONAL IF documentation repo)
 [//]: # (ELSE REQUIRED)
 
-Just run the requirements:
+### Local
+
+Install the requirements.
 
 `pip3 install -r requirements.txt`
+
+### Container
+
+Pull the container image.
+
+`podman pull quay.io/evoteum/tocgen`
 
 ## Usage
 [//]: # (REQUIRED)
@@ -90,8 +107,8 @@ Consectetur adipiscing elit.
  ```
 
 It is often a good idea to include a Table of Contents at the top to aid readability, something that is recommended by
-standard readme. Updating this becomes a pain whenever you add a new heading though. Instead, just add the tocgen
-markers.
+[standard readme](https://github.com/RichardLitt/standard-readme). Updating this becomes a pain whenever you add a new
+heading though. Instead, just add the tocgen markers.
 
 ```markdown
 # repo-name
@@ -103,6 +120,7 @@ markers.
 [//]: # (Table of contents will be automatically generated and inserted here.)
 
 [//]: # (TOCGEN_TABLE_OF_CONTENTS_END)
+
 
 ## Install
 
@@ -124,7 +142,12 @@ every time you change the headings, your table of contents updates automatically
 [//]: # (each of which must have their own titles.)
 
 ## Configuration
+Uses sensible defaults, so just ignore this entire section if you want to keep things standard.
 
+If you prefer to [927](https://xkcd.com/927/), feel free to crack on.
+
+[//]: # (Dear American reader, "crack on" means "continue" in British. Come visit us sometime. The weather's great.)
+[//]: # ("Honest".)
 
 ### CLI Args
 Config can be passed as CLI args
@@ -147,7 +170,7 @@ appropriate. See below.
 | `--indent`     | `indent`           | integer | `4`                                   | Any positive integer                                           | Number of spaces used to indent sub-headings in the TOC.                                          |
 | `--min-level`  | `min_level`        | integer | `2`                                   | 1, 2, 3, 4, 5, 6                                               | Minimum heading level to include (e.g. `2` to skip document titles).                              |
 | `--max-level`  | `max_level`        | integer | `6`                                   | 1, 2, 3, 4, 5, 6                                               | Maximum heading level to include.                                                                 |
-| `--list-style` | `list_style`       | string  | `ordered`                             | `ordered`, `unordered`, `number`, `bullet`, `o`, `n`, `u`, `b` | Determines list style for the TOC.                                                                |
+| `--list-style` | `list_style`       | string  | `unordered`                           | `ordered`, `unordered`, `number`, `bullet`, `o`, `n`, `u`, `b` | Determines list style for the TOC.                                                                |
 
 ### Precedence
 
