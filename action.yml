@@ -1,0 +1,61 @@
+name: "tocgen"
+description: "Automatically generate and update Markdown Tables of Contents between specified markers."
+author: "Evoteum <dev@evoteum.com>"
+
+runs:
+  using: "docker"
+  image: "quay.io/evoteum/tocgen:latest"
+  args:
+    - "--config"
+    - "${{ inputs.config }}"
+    - "--files"
+    - "${{ inputs.files }}"
+    - "--start"
+    - "${{ inputs.start }}"
+    - "--end"
+    - "${{ inputs.end }}"
+    - "--indent"
+    - "${{ inputs.indent }}"
+    - "--min-level"
+    - "${{ inputs.min_level }}"
+    - "--max-level"
+    - "${{ inputs.max_level }}"
+    - "--list-style"
+    - "${{ inputs.list_style }}"
+
+inputs:
+  config:
+    description: "Path to a custom YAML configuration file"
+    required: false
+
+  files:
+    description: "Space-separated list of Markdown files to update (default: all files containing TOC markers)"
+    required: false
+
+  start:
+    description: "Custom start marker text"
+    required: false
+
+  end:
+    description: "Custom end marker text"
+    required: false
+
+  indent:
+    description: "Indentation (number of spaces) per heading level"
+    required: false
+
+  min_level:
+    description: "Minimum heading level to include (1–6)"
+    required: false
+
+  max_level:
+    description: "Maximum heading level to include (1–6)"
+    required: false
+
+  list_style:
+    description: "List style: ordered, unordered, number, or bullet"
+    required: false
+
+branding:
+  icon: "list"
+  color: "blue"
