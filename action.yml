@@ -4,7 +4,7 @@ author: "Evoteum <dev@evoteum.com>"
 
 runs:
   using: "docker"
-  image: "quay.io/evoteum/tocgen:latest"
+  image: "docker://quay.io/evoteum/tocgen:latest"
   args:
     - "--config"
     - "${{ inputs.config }}"
