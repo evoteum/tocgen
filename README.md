@@ -112,48 +112,19 @@ Pull the container image.
 [//]: # (REQUIRED)
 [//]: # (Explain what the thing does. Use screenshots and/or videos.)
 
-### Example
-
-You might have a README.md that looks a bit like this
-
-```markdown
-# repo-name
-
-## Install
-
-Lorem ipsum dolor sit amet.
- 
-## Usage
-
-Consectetur adipiscing elit.
- ```
-
 It is often a good idea to include a Table of Contents at the top to aid readability, something that is recommended by
 [standard readme](https://github.com/RichardLitt/standard-readme). Updating this becomes a pain whenever you add a new
 heading though. Instead, just add the tocgen markers.
 
 ```markdown
-# repo-name
-
-## Table of Contents
-
 [//]: # (TOCGEN_TABLE_OF_CONTENTS_START)
 
 [//]: # (Table of contents will be automatically generated and inserted here.)
 
 [//]: # (TOCGEN_TABLE_OF_CONTENTS_END)
-
-
-## Install
-
-Lorem ipsum dolor sit amet.
- 
-## Usage
-
-Consectetur adipiscing elit.
 ```
 
-Now, tocgen takes ownership of everything between TOCGEN_TABLE_OF_CONTENTS_START and TOCGEN_TABLE_OF_CONTENTS_END, so
+Now, tocgen takes ownership of everything between `TOCGEN_TABLE_OF_CONTENTS_START` and `TOCGEN_TABLE_OF_CONTENTS_END`, so
 every time you change the headings, your table of contents updates automatically.
 
 
